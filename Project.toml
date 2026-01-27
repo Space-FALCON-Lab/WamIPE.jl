@@ -6,9 +6,7 @@ authors = ["Tarun <iTarun17@gmail.com>"]
 [deps]
 AWS = "fbe9abb3-538b-5e4e-ba9e-bc94f4f92ebc"
 AWSS3 = "1c724243-ef5b-51ab-93f4-b0a88ac62a95"
-CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 CommonDataModel = "1fbeeb36-5f17-413c-809b-666fb144f157"
-DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 DataInterpolations = "82cc6244-b520-54b8-b5a6-8a565e85f1d0"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 EzXML = "8f5d6c58-4d21-5cfd-889c-e3ad7ee6a615"

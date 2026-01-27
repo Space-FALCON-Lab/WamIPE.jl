@@ -138,7 +138,7 @@ function get_file!(c::Cache, cache_key::String, local_relpath::String, downloade
 
         sz = try
             filesize(local_path)
-        catch _
+        catch err
             0
         end
         c.map[cache_key]   = local_path
