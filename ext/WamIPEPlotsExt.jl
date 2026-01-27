@@ -4,14 +4,12 @@ using WamIPE
 using Plots
 using Dates
 
-import WamIPE: WAMInterpolator, mean_density_profile
+import WamIPE.Density: WAMInterpolator, mean_density_profile
 
-function plot_global_mean_profile(itp::WAMInterpolator, dt::DateTime;
-                                  alt_max_km::Real=500,
-                                  savepath::Union{Nothing,String}=nothing)
-
+function WamIPE.plot_global_mean_profile(itp::WAMInterpolator, dt::DateTime;
+                                         alt_max_km::Real=500,
+                                         savepath::Union{Nothing,String}=nothing)
     alt_km, dens = mean_density_profile(itp, dt)
-
     mask = .!(isnan.(dens) .| isinf.(dens))
     altp = alt_km[mask]
     denp = dens[mask]

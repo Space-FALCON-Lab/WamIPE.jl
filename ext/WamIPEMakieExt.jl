@@ -4,10 +4,15 @@ using WamIPE
 using Dates
 using CairoMakie
 
-import WamIPE: WAMInterpolator, mean_density_profile
+import WamIPE.Density: WAMInterpolator, mean_density_profile
 
-function _extend_profile_to_zero(alt_km::AbstractVector{<:Real},
-                                 dens::AbstractVector{<:Real})
+function WamIPE.plot_global_mean_profile_makie(itp::WAMInterpolator, dt::DateTime;
+            alt_max_km::Union{Nothing,Real}=nothing,
+            extend_to0::Bool=false,
+            savepath::Union{Nothing,String}=nothing,
+            export_csv::Bool=false,
+            base_dir::AbstractString="plots",
+        )
     if any(abs.(alt_km) .<= 1e-8)
         return collect(alt_km), collect(dens)
     end
